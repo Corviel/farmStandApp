@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
+    <title>All products</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="products-card">
+        <h2>Our products</h2>
+        <ul>
+          <% for( let product of products ) { %>
+          <li>
+            <a href="/products/<%= product._id %>"><%= product.name %></a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <!-- <a href="products/new">Create new product</a> -->
+    </main>
+  </body>
+</html>
