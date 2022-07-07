@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 100vh;
+  background: no-repeat center/cover url("../images/fruitsAndVegs.jpg");
+}
+.home-container .intro-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+.home-container .intro-text .rectangle-1 {
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  top: 0;
+  left: 50%;
+  background: #FFF301;
+}
+.home-container .intro-text .rectangle-2 {
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  right: 4rem;
+  bottom: 0;
+  background-color: #FFF301;
+}
+.home-container .intro-text h1 {
+  position: relative;
+  font-size: 3rem;
+  width: 50%;
+  align-self: flex-end;
+  text-align: center;
+}
+.home-container .intro-text h1 span {
+  background: black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  color: #FFF301;
+}
+.home-container .intro-text a {
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+  width: 15%;
+  text-align: center;
+  align-self: flex-end;
+  border: 2px solid #353535;
+  background-color: #353535;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  transition: all 0.4s ease-out;
+}
+.home-container .intro-text a:hover {
+  box-shadow: 5px 2px 0 #000, 5px 3px 0 #000, 5px 4px 0 #000, 5px 5px 0 #000;
+}
+
+.main-nav {
+  position: fixed;
+}
+.main-nav ul {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50vh repeat(3, 1fr);
+  background: red;
+}/*# sourceMappingURL=combined.css.map */
