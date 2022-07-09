@@ -58,24 +58,24 @@ svg {
 }
 body {
   font-family: "Nunito", sans-serif;
+  background: no-repeat center/cover url("../images/fruitsAndVegs.jpg");
 }
 
 .home-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 100vh;
-  background: no-repeat center/cover url("../images/fruitsAndVegs.jpg");
 }
-.home-container .intro-text {
+.home-container .intro-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  gap: 2rem;
+  gap: 3rem;
 }
-.home-container .intro-text .rectangle-1 {
+.home-container .intro-container .rectangle-1 {
   position: absolute;
   width: 40rem;
   height: 4rem;
@@ -83,59 +83,367 @@ body {
   left: 50%;
   background: #FFF301;
 }
-.home-container .intro-text .rectangle-2 {
+.home-container .intro-container .rectangle-2 {
   position: absolute;
   width: 40rem;
   height: 4rem;
-  right: 4rem;
+  right: 0;
   bottom: 0;
   background-color: #FFF301;
 }
-.home-container .intro-text h1 {
-  position: relative;
+.home-container .intro-container h1 {
   font-size: 3rem;
   width: 50%;
   align-self: flex-end;
   text-align: center;
 }
-.home-container .intro-text h1 span {
+.home-container .intro-container h1 span {
   background: black;
   border-left: 2px solid black;
   border-right: 2px solid black;
   color: #FFF301;
 }
-.home-container .intro-text a {
-  font-family: "Nunito", sans-serif;
+.home-container .intro-container a {
   text-decoration: none;
   width: 15%;
   text-align: center;
   align-self: flex-end;
-  border: 2px solid black;
-  background-color: black;
-  color: white;
+  border: 3px solid black;
+  background-color: transparent;
+  color: black;
   border-radius: 5px;
   font-size: 1.5rem;
   padding: 1rem;
   transition: all 0.4s ease-out;
 }
-.home-container .intro-text a:hover {
+.home-container .intro-container a:hover {
   border-radius: 5rem;
-  color: #FFF301;
-}
-
-.main-nav {
-  position: fixed;
-}
-.main-nav ul {
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
-  gap: 2rem;
 }
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50vh repeat(3, 1fr);
-  background: yellow;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 100vh;
+  place-items: center end;
+}
+.products-container .rectangle-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  top: 0;
+  left: 50%;
+  background: #FFF301;
+}
+.products-container .rectangle-1 a {
+  margin-right: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.products-container .rectangle-2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF301;
+}
+.products-container .rectangle-2 a {
+  margin-right: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.products-container .products-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  border: 3px solid black;
+  width: 30%;
+  height: 60%;
+  margin-right: 4rem;
+  border-radius: 0.5rem;
+}
+.products-container .products-card h1 {
+  font-size: 3rem;
+  align-self: center;
+}
+.products-container .products-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 80%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.products-container .products-card ul .list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid black;
+}
+.products-container .products-card ul .list-items a {
+  color: black;
+  text-decoration: none;
+}
+.products-container .products-card ul .list-items a:hover {
+  text-decoration: underline;
+}
+.products-container .products-card ul .list-items div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.products-container .products-card ul .list-items div a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.2rem;
+  color: black;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+.products-container .products-card ul .list-items div a:hover {
+  text-decoration: none;
+  color: #858585;
+}
+.products-container .products-card ul .list-items div button {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 0.2rem;
+  color: black;
+  border-radius: 2px;
+}
+.products-container .products-card ul .list-items div button:hover {
+  cursor: pointer;
+  color: #C0392B;
+}
+.products-container .products-card .create-btn {
+  text-decoration: none;
+  align-self: center;
+  color: black;
+  padding: 1rem;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.4s ease-out;
+}
+.products-container .products-card .create-btn:hover {
+  border-radius: 5rem;
+}
+
+.add-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 100vh;
+  place-items: center end;
+}
+.add-container .rectangle-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  top: 0;
+  left: 50%;
+  background: #FFF301;
+}
+.add-container .rectangle-1 a {
+  margin-right: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.add-container .rectangle-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF301;
+}
+.add-container .rectangle-2 a {
+  margin-left: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.add-container .add-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  border: 3px solid black;
+  width: 30%;
+  height: 60%;
+  margin-right: 4rem;
+  border-radius: 0.5rem;
+}
+.add-container .add-product h1 {
+  font-size: 3rem;
+}
+.add-container .add-product form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80%;
+}
+.add-container .add-product form div {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.add-container .add-product form label {
+  font-weight: bold;
+}
+.add-container .add-product form input {
+  width: 75%;
+  background: transparent;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.add-container .add-product form select {
+  background: transparent;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid black;
+  width: 75%;
+}
+.add-container .add-product form button {
+  text-decoration: none;
+  align-self: center;
+  color: black;
+  padding: 1rem;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.4s ease-out;
+}
+.add-container .add-product form button:hover {
+  cursor: pointer;
+  border-radius: 5rem;
+}
+
+.edit-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 100vh;
+  place-items: center end;
+}
+.edit-container .rectangle-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  top: 0;
+  left: 50%;
+  background: #FFF301;
+}
+.edit-container .rectangle-1 a {
+  margin-right: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.edit-container .rectangle-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: 40rem;
+  height: 4rem;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF301;
+}
+.edit-container .rectangle-2 a {
+  margin-left: 1rem;
+  color: black;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.edit-container .edit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  border: 3px solid black;
+  width: 30%;
+  height: 60%;
+  margin-right: 4rem;
+  border-radius: 0.5rem;
+}
+.edit-container .edit-card h1 {
+  font-size: 3rem;
+}
+.edit-container .edit-card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.edit-container .edit-card form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80%;
+}
+.edit-container .edit-card form div {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.edit-container .edit-card form label {
+  font-weight: bold;
+}
+.edit-container .edit-card form input {
+  width: 75%;
+  background: transparent;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.edit-container .edit-card form select {
+  background: transparent;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid black;
+  width: 75%;
+}
+.edit-container .edit-card form button {
+  text-decoration: none;
+  align-self: center;
+  color: black;
+  padding: 1rem;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.4s ease-out;
+}
+.edit-container .edit-card form button:hover {
+  cursor: pointer;
+  border-radius: 5rem;
 }/*# sourceMappingURL=combined.css.map */

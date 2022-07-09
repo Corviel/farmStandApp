@@ -56,5 +56,13 @@ svg {
 }
 // The reset stops here
 
+body {
+  font-family: 'Nunito', sans-serif;
+  background: no-repeat center / cover url('../images/fruitsAndVegs.jpg');
+}
+
 @import 'home';
 @import 'products';
+@import 'new';
+@import 'edit';
+@import 'details';

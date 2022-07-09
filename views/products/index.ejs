@@ -4,25 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/combined.css" type="text/css" />
-    <title>All products</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/517/517588.png">
+    <title>Our stock</title>
   </head>
   <body>
     <main class="products-container">
       <div class="products-card">
-        <h2>Our products</h2>
-        <ul>
+        <h1>Our stock</h1>
+        <div class="rectangle-1"><a href="/">HOME</a></div>
+        <div class="rectangle-2"></div>
+        <ul role="list">
           <% for( let product of products ) { %>
           <li>
-            <a href="/products/<%= product._id %>"><%= product.name %></a>
+            <div class="list-items">
+              <a href="/products/<%= product._id %>/edit"><%= product.name %></a>
+              <div>
+                <p>$<%= product.price %></p>
+                <a href="/products/<%= product._id %>/edit">Edit</a>
+                <form
+                  action="/products/<%=product._id%>?_method=DELETE"
+                  method="POST"
+                >
+                  <button>Delete</button>
+                </form>
+              </div>
+            </div>
           </li>
           <% } %>
         </ul>
+        
+        <a href="products/new" class="create-btn">Add your product</a>
       </div>
-      <a href="products/new">Create new product</a>
     </main>
   </body>
 </html>

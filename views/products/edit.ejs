@@ -4,30 +4,48 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/combined.css" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/517/517588.png">
    <title>Edit product</title>
 </head>
 <body>
-   <h1>Edit product</h1>
+   <main class="edit-container">
+      <div class="edit-card">
+         <h1>Edit product</h1>
+         <h2>Product ID: <%= product._id %></h2>
 
-   <h2>Product ID: <%= product._id %></h2>
+         <div class="rectangle-1"><a href="/">HOME</a></div>
+         <div class="rectangle-2"><a href="/products">BACK</a></div>
 
-   <form action="/products/<%= product._id %>?_method=PUT" method="post">
-      <label for="name">Product name:</label>
-      <input type="text" name="name" placeholder="Product name" id="name" value="<%= product.name %>"/>
+         <form action="/products/<%= product._id %>?_method=PUT" method="post">
+            <div>
+               <label for="name">Product name:</label>
+               <input type="text" name="name" placeholder="Product name" id="name" value="<%= product.name %>"/>
+            </div>
 
-      <label for="price">Product price:</label>
-      <input type="text" name="price" placeholder="Product price" id="price" value="<%= product.price %>"/>
+            <div>
+               <label for="price">Product price:</label>
+               <input type="text" name="price" placeholder="Product price" id="price" value="<%= product.price %>"/>
+            </div>
+      
 
-      <label for="category">Category:</label>
-      <select name="category" id="category">
-        <% for( let category of categories ) { %>
-        <option value="<%=category%>"<%= category === product.category ? 'selected' : '' %>><%=category%></option>
-        <% } %>
-      </select>
-      <button>Submit</button>
-    </form>
+            <div>
+               <label for="category">Category:</label>
+               <select name="category" id="category">
+                  <% for( let category of categories ) { %>
+                  <option value="<%=category%>"<%= category === product.category ? 'selected' : '' %>><%=category%></option>
+                  <% } %>
+               </select>
+            </div>
+            <button>Save your changes</button>
+         </form>
 
-    <a href="/products/<%=product._id%>">Cancel</a>
-
+         <a href="/products">Cancel</a>
+      </div>
+   </main>
 </body>
 </html>

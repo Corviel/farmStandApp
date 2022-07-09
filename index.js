@@ -31,14 +31,14 @@ app.post('/products', async (req, res) => { // Get back to main page after creat
    const newProduct = new Product(req.body)
    await newProduct.save()
    console.log(newProduct);
-   res.redirect(`products/${newProduct._id}`)
+   res.redirect(`products/`)
 })
 
-app.get('/products/:id', async (req, res) => { // Detail page of a specific product
+/* app.get('/products/:id', async (req, res) => { // Detail page of a specific product
    const { id } = req.params
    const product = await Product.findById(id)
    res.render('products/details', { product })
-})
+}) */
 
 app.get('/products/:id/edit', async (req, res) => { // Edit page of specific product
    const { id } = req.params
@@ -50,7 +50,7 @@ app.get('/products/:id/edit', async (req, res) => { // Edit page of specific pro
 app.put('/products/:id', async (req, res) => { // Get back to product specific page after editing the product
    const { id } = req.params
    const editedProduct = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true})
-   res.redirect(`/products/${editedProduct._id}`)
+   res.redirect(`/products`)
 })
 
 app.delete('/products/:id', async (req, res) => {
